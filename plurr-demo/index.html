@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Plurr Demo</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <!-- CodeMirror editor -->
+    <link rel="stylesheet" href="js/codemirror/lib/codemirror.css">
+    <script src="js/codemirror/lib/codemirror.js"></script>
+    <script src="js/codemirror/mode/plurr/plurr.js"></script>
+    <link rel="stylesheet" href="js/codemirror/mode/plurr/plurr.css">
+
+    <!-- Plurr -->
+    <script src="../js/plurr.js"></script>
+
+    <!-- Demo -->
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/plural_options.js"></script>
+    <script src="js/demo.js"></script>
+
+  </head>
+  <body>
+    <h1>Plurr Demo</h1>
+
+    <p>Plurr is a cross-platform format specification + libraries for handling plurals/genders/conditionals. Learn more at <a href="https://github.com/iafan/Plurr">https://github.com/iafan/Plurr</a>.</p>
+
+    <h2>1. Define Plurr options:</h2>
+    <p>
+      <table>
+        <tr>
+          <td><label for="locale"><code>locale:</code></label></td>
+          <td><select name="locale" id="locale"></select><br /><span class="hint">(Target locale based on which the plurals are calculated)</span></td>
+        </tr>
+        
+        <tr>
+          <td><label for="auto_plurals"><code>auto_plurals:</code></label></td>
+          <td><input type="checkbox" name="auto_plurals" id="auto_plurals" checked="checked" /> <span class="hint">(Generate X_PLURAL based on the value of X)</span></td>
+        </tr>
+        
+        <tr>
+          <td><label for="strict"><code>strict:</code></label></td>
+          <td><input type="checkbox" name="strict" id="strict" checked="checked" /> <span class="hint">(Throw exceptions when parameters are not provided)</span></td>
+        </tr>
+      </table>
+    </p>
+
+    <h2>2. Play around with the format string:</h2>
+    <textarea id="source" name="source">Do you want to delete {N_PLURAL:this {N} file|these {N} files} permanently?</textarea>
+
+    <h2>3. Try specifying different input parameters:</h2>
+    <table id="params"></table>
+
+    <h2>4. See the live output as you type:</h2>
+    <pre id="error"></pre>
+    <textarea id="output" readonly="readonly"></textarea>
+  </body>
+</html>
